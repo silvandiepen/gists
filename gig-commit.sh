@@ -21,7 +21,7 @@ bold=`tput bold`
 dim=`tput dim`
 
 printf "\n"
-echo "\t${bold}${blue}GiG${reset}${bold}Commit${reset}"
+printf "\t${bold}${blue}GiG${reset}${bold}Commit${reset}"
 printf "\n"
 # echo '\033[38;5;1mnormal \033[02;38;5;1mdim \033[01;38;5;1mbold'
 
