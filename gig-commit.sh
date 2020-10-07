@@ -23,6 +23,7 @@ dim=`tput dim`
 printf "\n"
 printf "\t${bold}${blue}GiG${reset}${bold}Commit${reset}"
 printf "\n"
+printf "\n"
 # echo '\033[38;5;1mnormal \033[02;38;5;1mdim \033[01;38;5;1mbold'
 
 
@@ -51,8 +52,8 @@ MESSAGE=`echo "$MESSAGE_ANSWER" | awk '{ print tolower($1) }'`
 COMMIT_MSG="git commit -m \"feat($PACKAGE): $MESSAGE \" -m \"Closes #${TEAM}-${TICKET}\""
 
 printf "\n"
-echo "\t${yellow}$COMMIT_MSG${reset}" 
-echo "\t"
+printf "\t${yellow}$COMMIT_MSG${reset}" 
+printf "\t"
 read -p "Do you want to commit? ${blue}Y/n${reset}   " COMMIT_ANSWER
 Y='y';
 DO_COMMIT="${COMMIT_ANSWER:-$Y}"
