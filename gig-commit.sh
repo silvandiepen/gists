@@ -66,11 +66,3 @@ if [["$DO_COMMIT" = "Y" || "$DO_COMMIT" = 'y']]; then
 else 
     echo "Ok, you don't have to.."
 fi
-
-# echo "git commit -m \"feat($PACKAGE): $MESSAGE \" -m \"Closes #$TEAM-$TICKET\""
-
-
-#    git commit -m "feat(igc.sportsbook): add outrights" -m "Closes #GOALFE-1053"
-
-
-# bash <(curl -s https://gist.githubusercontent.com/silvandiepen/780593d032cf7a43c8ff4a9684e4861d/raw/a85fce04d2c4ce46c55c0c5541f5de08af8dfd73/gig-commit.sh))
