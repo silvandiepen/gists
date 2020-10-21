@@ -5,10 +5,6 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 
-echo $0
-echo $1
-echo $2
-echo $@
 
 source ${DIR}/styling.sh
 

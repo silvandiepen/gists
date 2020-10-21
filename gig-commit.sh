@@ -1,9 +1,17 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-source ${DIR}/select.sh
-source ${DIR}/styling.sh
+if [[ ! -z "$2" ]]; then
+    source /dev/stdin <<< "$(curl -s $2/select.sh)"
+    source /dev/stdin <<< "$(curl -s $2/styling.sh)"
+else 
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+    source ${DIR}/select.sh
+    source ${DIR}/styling.sh
+fi
+
+
+
 
 branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 staged=$(git diff --name-only --cached)
