@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-if [[ ! -z "$2" ]]; then
-    source /dev/stdin <<< "$(curl $2/select.sh)"
-    source /dev/stdin <<< "$(curl $2/styling.sh)"
+if [[ ! -z "$1" ]]; then
+    source /dev/stdin <<< "$(curl $1/select.sh)"
+    source /dev/stdin <<< "$(curl $1/styling.sh)"
 else 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
     source ${DIR}/select.sh
