@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
-# source <(curl -s https://gists.sil.mt/styling.sh)
-# source /dev/stdin <<< "$(curl -s https://gists.sil.mt/styling.sh)"
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-
-
-source ${DIR}/styling.sh
+if [[ ! -z "$1" ]]; then
+    source /dev/stdin <<< "$(curl -s $1/styling.sh)"
+else 
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+    source ${DIR}/styling.sh
+fi
 
 # Renders a text based list of options that can be selected by the
 # user using up, down and enter keys and returns the chosen option.

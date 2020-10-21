@@ -2,8 +2,8 @@
 
 
 if [[ ! -z "$1" ]]; then
-    source /dev/stdin <<< "$(curl $1/select.sh)"
-    source /dev/stdin <<< "$(curl $1/styling.sh)"
+    source /dev/stdin <<< "$(curl -s $1/select.sh)"
+    source /dev/stdin <<< "$(curl -s $1/styling.sh)"
 else 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
     source ${DIR}/select.sh
