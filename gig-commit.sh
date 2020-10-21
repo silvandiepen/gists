@@ -45,11 +45,17 @@ printf "\t${bold}Package name${reset} ${blue}($PACKAGE_FOLDER)${reset} \n"
 read -p " " PACKAGE_ANSWER
 PACKAGE="${PACKAGE_ANSWER:-$PACKAGE_FOLDER}"
 
+
+TYPE_DEFAULT=$(basename $PWD)
+printf "\t${bold}type${reset} ${blue}($TYPE_DEFAULT)${reset} \n"
+read -p " " TYPE_ANSWER
+TYPE="${TYPE_ANSWER:-$TYPE_DEFAULT}"
+
 printf "\t${bold}Commit Message${reset} "
 read -p " " MESSAGE_ANSWER
 MESSAGE=`echo "$MESSAGE_ANSWER" | awk '{ print tolower($1) }'`
 
-COMMIT_MSG="git commit -m \"feat($PACKAGE): $MESSAGE \" -m \"Closes #${TEAM}-${TICKET}\""
+COMMIT_MSG="git commit -m \"$TYPE($PACKAGE): $MESSAGE \" -m \"Closes #${TEAM}-${TICKET}\""
 
 printf "\n"
 printf "\t${yellow}$COMMIT_MSG${reset}" 
