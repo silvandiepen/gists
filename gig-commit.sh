@@ -172,7 +172,7 @@ COMMIT_FULL_MSG="git commit -m \"${COMMIT_MSG1}\" -m \"${COMMIT_MSG2}\""
 
 # SHOW COMMIT MESSAGE
 question "Are you sure you want to commit;"
-printf "\t${yellow}$COMMIT_MSG${reset}" 
+printf "\t${yellow}$COMMIT_FULL_MSG${reset}" 
 printf "\t"
 read -p "${blue}Y/n${reset}   " COMMIT_ANSWER
 Y='y';
