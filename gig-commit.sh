@@ -165,7 +165,9 @@ BRANCH_TYPE="${type_options[$choice]}"
 question "Commit Message"
 read -p " " MESSAGE_ANSWER
 MESSAGE=`echo "$MESSAGE_ANSWER" | awk '{ print tolower($1) }'`
-COMMIT_MSG="git commit -m \"$BRANCH_TYPE($PACKAGE): $MESSAGE \" -m \"Closes #${TEAM}-${TICKET}\""
+COMMIT_MSG1="$BRANCH_TYPE($PACKAGE): $MESSAGE"
+COMMIT_MSG2="Closes #${TEAM}-${TICKET}"
+COMMIT_FULL_MSG="git commit -m \"${COMMIT_MSG1}\" -m \"${COMMIT_MSG2}\""
 
 
 # SHOW COMMIT MESSAGE
@@ -180,8 +182,8 @@ DO_COMMIT="${COMMIT_ANSWER:-$Y}"
 # echo $DO_COMMIT
 
 if [ "$DO_COMMIT" = 'y' ]; then
-    echo 'Gonna commit it to your mother!'
-$COMMIT_MSG
+echo 'Gonna commit it to your mother!'
+git commit -m "${COMMIT_MSG1}" -m "${COMMIT_MSG2}"
 else 
     echo "Ok, you don't have to.."
 fi
