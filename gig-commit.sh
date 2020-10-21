@@ -182,9 +182,11 @@ DO_COMMIT="${COMMIT_ANSWER:-$Y}"
 
 # echo $DO_COMMIT
 
-if [ "$DO_COMMIT" = 'y' ]; then
-echo 'Gonna commit it to your mother!'
+if [ "$DO_COMMIT" = 'y' ] || [ "$DO_COMMIT" = 'Y' ]; then
+echo 'There you go...'
 git commit -m "${COMMIT_MSG1}" -m "${COMMIT_MSG2}"
+echo ''
+echo ''
 else 
     echo "Ok, you don't have to.."
 fi
