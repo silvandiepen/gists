@@ -4,6 +4,12 @@
 # source /dev/stdin <<< "$(curl -s https://gists.sil.mt/styling.sh)"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+
+echo $0
+echo $1
+echo $2
+echo $@
+
 source ${DIR}/styling.sh
 
 # Renders a text based list of options that can be selected by the
