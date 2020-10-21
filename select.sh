@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./styling.sh
+source <(curl -s https://gists.sil.mt/styling.sh)
 
 # Renders a text based list of options that can be selected by the
 # user using up, down and enter keys and returns the chosen option.

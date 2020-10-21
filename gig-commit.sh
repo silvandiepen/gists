@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source ./select.sh
-source ./styling.sh
+source <(curl -s https://gists.sil.mt/select.sh)
+source <(curl -s https://gists.sil.mt/styling.sh)
 
 branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 staged=$(git diff --name-only --cached)
