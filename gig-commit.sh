@@ -155,7 +155,7 @@ PACKAGE="${PACKAGE_ANSWER:-$PACKAGE_FOLDER}"
 
 # TYPE OF BRANCH
 question "Type"
-type_options=("build" "chore" "ci" "docs" "feat" "fix" "erf" "refactor" "revert" "style" "test")
+type_options=("build" "chore" "ci" "docs" "feat" "fix" "perf" "refactor" "revert" "style" "test")
 # type_options=("feat" "fix" "bugfix" "test")
 select_option "${type_options[@]}"
 choice=$?
