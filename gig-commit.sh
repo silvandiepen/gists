@@ -162,8 +162,8 @@ choice=$?
 BRANCH_TYPE="${type_options[$choice]}"
 
 # SHOW COMMIT MESSAGE
-question "Closing?"
-read -p "${blue}y/N${reset}   " COMMIT_ANSWER
+question "Closing?" "y/N"
+read -p " " COMMIT_ANSWER
 N='n';
 CLOSES="${COMMIT_ANSWER:-$N}"
 
@@ -174,7 +174,8 @@ read -p " " MESSAGE_ANSWER
 MESSAGE=`echo "$MESSAGE_ANSWER" | awk '{ print tolower($1) }'`
 COMMIT_MSG1="$BRANCH_TYPE($PACKAGE): $MESSAGE"
 COMMIT_MSG2="Closes #${TEAM}-${TICKET}"
-if [ "$CLOSES" = 'n'] || [ "$CLOSES" = 'N']; then 
+
+if [ "$CLOSES" = 'n' ] || [ "$CLOSES" = 'N' ]; then 
     COMMIT_FULL_MSG="git commit -m \"${COMMIT_MSG1}\""
 else
     COMMIT_FULL_MSG="git commit -m \"${COMMIT_MSG1}\" -m \"${COMMIT_MSG2}\""
