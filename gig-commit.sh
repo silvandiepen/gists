@@ -171,7 +171,7 @@ CLOSES="${COMMIT_ANSWER:-$N}"
 # COMMIT MESSAGE
 question "Commit Message"
 read -p " " MESSAGE_ANSWER
-MESSAGE=`echo "$MESSAGE_ANSWER" | awk '{ print tolower($1) }'`
+MESSAGE=`echo "$MESSAGE_ANSWER" | awk '{print tolower($0)}'`
 COMMIT_MSG1="$BRANCH_TYPE($PACKAGE): $MESSAGE"
 COMMIT_MSG2="Closes #${TEAM}-${TICKET}"
 
